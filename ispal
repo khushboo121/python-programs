@@ -1,0 +1,24 @@
+import re
+class Solution:
+    def isPalindrome(self, s: str) -> bool:
+
+        if s == "": return True  
+        cleanedstr= re.sub(r'[^a-zA-Z0-9]','',s).lower()
+        return cleanedstr[::-1] == cleanedstr
+
+        #without re
+        #cleaned=""
+        #s=s.lower()
+        #for ch in s:
+        #    if ch.isalnum():
+        #        cleaned+=ch
+        #return cleaned == cleaned[::-1]
+
+
+
+if __name__ == "__main__":
+
+    s = "ab_a"
+    object = Solution()
+    print(object.isPalindrome(s))        
+
